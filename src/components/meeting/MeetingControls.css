@@ -1,0 +1,93 @@
+.meeting-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.meeting-controls button {
+  align-items: center;
+  background: #1a223c;
+  border: 1px solid #36446f;
+  border-radius: 50%;
+  color: #e6ebff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 19px;
+  height: 46px;
+  justify-content: center;
+  padding: 0;
+  transition: background 150ms ease, transform 150ms ease;
+  width: 46px;
+}
+
+.volume-control {
+  align-items: center;
+  display: inline-flex;
+  gap: 7px;
+  margin-right: 4px;
+}
+
+.volume-control > img {
+  display: block;
+  height: 24px;
+  object-fit: contain;
+  width: 24px;
+}
+
+.volume-slider {
+  appearance: none;
+  background: linear-gradient(90deg, #268cff 0%, #27c96f 50%, #ee3f4f 100%);
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  height: 18px;
+  outline: none;
+  width: 116px;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}
+
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  background: #fff;
+  border: 2px solid #172344;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 45%);
+  height: 20px;
+  width: 8px;
+}
+
+.volume-slider::-moz-range-thumb {
+  background: #fff;
+  border: 2px solid #172344;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 45%);
+  height: 16px;
+  width: 8px;
+}
+
+.volume-slider:focus-visible {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #268cff;
+}
+
+.meeting-controls button img {
+  display: block;
+  height: 22px;
+  object-fit: contain;
+  width: 22px;
+}
+
+.meeting-controls button:hover {
+  background: #29375e;
+  transform: translateY(-2px);
+}
+
+.meeting-controls button.muted {
+  background: #5c3040;
+  border-color: #a85263;
+}
+
+.meeting-controls .end-call {
+  background: #d9534f;
+  border-color: #d9534f;
+}

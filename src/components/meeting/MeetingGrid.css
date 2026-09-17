@@ -1,0 +1,47 @@
+.video-stage {
+  border-radius: 14px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr minmax(100px, 300px);
+}
+
+.speaker-card {
+  background: linear-gradient(135deg, #202b49, #27345e);
+  border-radius: 12px;
+  height: 85dvh;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.participant-grid {
+  display: grid;
+  gap: 12px;
+  grid-auto-rows: 1fr;
+  max-height: 85dvh;
+}
+
+.participant-card {
+  background: #1a223c;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.participant-video-card {
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.participant-video-card .video-player-overlay {
+  padding: 32px 12px 12px;
+}
+
+.empty-speaker {
+  align-items: center;
+  color: #b9c4ec;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  min-height: 240px;
+}

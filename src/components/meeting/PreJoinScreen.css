@@ -1,0 +1,129 @@
+.pre-join {
+  align-items: center;
+  background: radial-gradient(circle at top, #202b49, #0b1020 65%);
+  display: flex;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 24px;
+}
+
+.pre-join-card {
+  border-radius: 18px;
+  max-width: 560px;
+  padding: 32px;
+  width: 100%;
+  transition: transform 1s ease, opacity 1s ease;
+
+  &.openning {
+    position: fixed;
+    transform: scale(3) translateY(-35%);
+    opacity: 0;
+  }
+}
+
+.pre-join-card h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  margin: 8px 0;
+}
+
+.pre-join-subtitle {
+  color: #b9c4ec;
+  margin: 0 0 24px;
+}
+
+.pre-join-preview {
+  aspect-ratio: 16 / 10;
+  background: #080b14;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pre-join-preview video {
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  width: 100%;
+}
+
+.pre-join-camera-off,
+.pre-join-name {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.pre-join-camera-off {
+  color: #9da9ce;
+  height: 100%;
+}
+
+.pre-join-name {
+  background: linear-gradient(transparent, rgb(0 0 0 / 70%));
+  bottom: 0;
+  left: 0;
+  padding: 28px 16px 14px;
+  position: absolute;
+  right: 0;
+}
+
+.pre-join-actions {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.pre-join-actions button,
+.join-button {
+  border: 1px solid #36446f;
+  border-radius: 10px;
+  color: #e6ebff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 11px 14px;
+}
+
+.pre-join-actions button {
+  align-items: center;
+  background: #1a223c;
+  display: inline-flex;
+  flex: 1;
+  justify-content: center;
+  min-height: 48px;
+}
+
+.pre-join-actions button.active {
+  border-color: #7186e8;
+}
+
+.pre-join-actions img,
+.join-button img {
+  display: block;
+  height: 48px;
+  object-fit: contain;
+}
+
+.join-button {
+  align-items: center;
+  background: #7186e8;
+  border-color: #7186e8;
+  display: inline-flex;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 130px;
+  width: 100%;
+
+  & img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 560px) {
+  .pre-join-card {
+    padding: 22px;
+  }
+
+  .pre-join-actions {
+    flex-direction: column;
+  }
+}

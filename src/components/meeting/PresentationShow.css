@@ -1,0 +1,177 @@
+.presentation-area {
+  background: #0b1020;
+  height: 100%;
+  min-height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.presentation-slide {
+  background:
+    radial-gradient(circle at 86% 18%, color-mix(in srgb, var(--presentation-accent) 35%, transparent), transparent 28%),
+    linear-gradient(135deg, #1b2440 0%, #10172d 72%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  min-height: 240px;
+  padding: clamp(28px, 5vw, 72px);
+  position: relative;
+}
+
+.presentation-slide-alt {
+  background:
+    linear-gradient(110deg, color-mix(in srgb, var(--presentation-accent) 20%, transparent), transparent 45%),
+    #111827;
+}
+
+.presentation-slide-focus {
+  background:
+    radial-gradient(circle at 72% 48%, color-mix(in srgb, var(--presentation-accent) 42%, transparent), transparent 25%),
+    #10172d;
+}
+
+.presentation-eyebrow {
+  color: var(--presentation-accent);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+
+.presentation-counter {
+  color: #aeb9df;
+  font-size: 13px;
+  margin: 0;
+}
+
+.presentation-main {
+  align-items: center;
+  display: grid;
+  gap: clamp(24px, 6vw, 90px);
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.7fr);
+  margin: auto 0;
+  width: 100%;
+}
+
+.presentation-slide h2 {
+  font-size: clamp(36px, 5vw, 78px);
+  line-height: 1.05;
+  margin: 0;
+  max-width: 800px;
+}
+
+.presentation-copy {
+  color: #d7def8;
+  font-size: clamp(21px, 2.1vw, 34px);
+  line-height: 1.25;
+  margin: 26px 0 0;
+  max-width: 720px;
+}
+
+.presentation-copy-block {
+  position: relative;
+  z-index: 1;
+}
+
+.presentation-visual {
+  align-items: center;
+  color: var(--presentation-accent);
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(48px, 8vw, 128px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+  text-shadow: 0 0 36px color-mix(in srgb, var(--presentation-accent) 35%, transparent);
+  white-space: pre-line;
+}
+
+.presentation-visual span {
+  display: block;
+}
+
+.presentation-topic {
+  color: #8d99c2;
+  font-size: 13px;
+  margin: 0 0 28px;
+  max-width: 65%;
+}
+
+.presentation-stat {
+  border: 1px solid color-mix(in srgb, var(--presentation-accent) 60%, transparent);
+  border-radius: 999px;
+  bottom: 28px;
+  color: var(--presentation-accent);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 8px 12px;
+  position: absolute;
+  right: clamp(28px, 6vw, 72px);
+}
+
+.presentation-slide-focus .presentation-visual {
+  font-size: clamp(72px, 12vw, 190px);
+}
+
+.presentation-progress {
+  background: rgb(255 255 255 / 14%);
+  bottom: 28px;
+  height: 4px;
+  left: clamp(28px, 6vw, 72px);
+  overflow: hidden;
+  position: absolute;
+  right: clamp(28px, 6vw, 72px);
+}
+
+.presentation-progress span {
+  background: var(--presentation-accent);
+  display: block;
+  height: 100%;
+  transition: width 300ms ease;
+}
+
+.presentation-camera {
+  border: 2px solid rgb(255 255 255 / 75%);
+  border-radius: 10px;
+  bottom: 24px;
+  box-shadow: 0 8px 28px rgb(0 0 0 / 38%);
+  height: 23%;
+  aspect-ratio: 16/9;
+  min-height: 130px;
+  overflow: hidden;
+  position: absolute;
+  right: 24px;
+  z-index: 2;
+}
+
+.presentation-camera .video-player-speaker {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .presentation-main {
+    grid-template-columns: 1fr;
+  }
+
+  .presentation-visual {
+    align-items: flex-start;
+    font-size: clamp(42px, 16vw, 84px);
+  }
+
+  .presentation-topic {
+    max-width: 50%;
+  }
+
+  .presentation-camera {
+    bottom: 16px;
+    height: 27%;
+    min-height: 92px;
+    right: 16px;
+    width: 34%;
+  }
+}

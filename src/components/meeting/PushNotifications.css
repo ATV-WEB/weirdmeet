@@ -1,0 +1,32 @@
+.push-notifications {
+  bottom: 20px;
+  display: grid;
+  gap: 8px;
+  left: 20px;
+  max-width: min(360px, calc(100vw - 40px));
+  position: fixed;
+  z-index: 10;
+}
+
+.push-notification {
+  animation: push-notification-in 180ms ease-out;
+  background: #f0f3ff;
+  border-left: 4px solid #7186e8;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 30%);
+  color: #1b2340;
+  font-size: 14px;
+  padding: 12px 14px;
+}
+
+@keyframes push-notification-in {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
