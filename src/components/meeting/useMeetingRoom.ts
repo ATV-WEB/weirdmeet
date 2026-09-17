@@ -64,7 +64,7 @@ export function useMeetingRoom() {
     if (nextSpeaker) {
       setMainSpeakerId(nextSpeaker.id)
       setMainSpeakerIsQuiet(true)
-      pushNotification(`${displayNameFor(nextSpeaker)} agora é o speaker principal`)
+      pushNotification(`${displayNameFor(nextSpeaker)} 🎤`)
     }
   }
 
@@ -82,7 +82,7 @@ export function useMeetingRoom() {
         setParticipants([...current, joining])
         const assignment = assignAvailableVideo(videoAssignments())
         if (assignment) setVideoAssignments((assignments) => ({ ...assignments, [joining.id]: assignment }))
-        pushNotification(`${assignment?.username ?? joining.name} entrou na reunião`)
+        pushNotification(`${assignment?.username ?? joining.name} ➡️`)
       }
     } else if (currentRemote.length > 2) {
       const removable = currentRemote.filter((participant) => participant.id !== mainSpeakerId())
@@ -95,7 +95,7 @@ export function useMeetingRoom() {
           delete next[leaving.id]
           return next
         })
-        pushNotification(`${leavingName} saiu da reunião`)
+        pushNotification(`${leavingName} ⬅️`)
       }
     }
 
