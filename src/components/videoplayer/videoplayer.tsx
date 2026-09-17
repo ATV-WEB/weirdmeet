@@ -1,5 +1,6 @@
 import { Show, createEffect, createSignal, onCleanup, onMount } from 'solid-js'
 import { videoMetadata } from '../videometadata.js'
+import { assetUrl } from '../../assets/assetUrl.js'
 import './videoplayer.css'
 
 type VideoMetadata = (typeof videoMetadata)[number]
@@ -178,7 +179,7 @@ export default function VideoPlayer(props: VideoPlayerProps) {
               fallback={
                 <video
                   ref={setupAudioNormalization}
-                  src={currentPath()}
+                  src={assetUrl(currentPath())}
                   autoplay
                   muted={!shouldPlaySound()}
                   loop={!isSubState() && (video().loop || video().subStates.length > 0)}
@@ -188,18 +189,18 @@ export default function VideoPlayer(props: VideoPlayerProps) {
                 />
               }
             >
-              <img src={currentPath()} />
+              <img src={assetUrl(currentPath())} />
             </Show>
             <div class="video-player-overlay">
               <div>
                 <strong>{video().username}</strong>
               </div>
               <Show when={props.isSharingScreen}>
-                <span class="video-player-badge"><img class="showing-screen" src="/static/icons/screensharing.gif" /></span>
+                <span class="video-player-badge"><img class="showing-screen" src={assetUrl('/static/icons/screensharing.gif')} /></span>
               </Show>
             </div>
             <Show when={props.mainSpeaker}>
-              <span class="video-player-speaker"><img class="video-player-speaker-img" src='/static/icons/mainspeaker.png' /></span>
+              <span class="video-player-speaker"><img class="video-player-speaker-img" src={assetUrl('/static/icons/mainspeaker.png')} /></span>
             </Show>
           </>
         )}

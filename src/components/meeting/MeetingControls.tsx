@@ -1,4 +1,5 @@
 import './MeetingControls.css'
+import { assetUrl } from '../../assets/assetUrl.js'
 
 type MeetingControlsProps = {
   microphoneEnabled: boolean
@@ -16,7 +17,7 @@ export default function MeetingControls(props: MeetingControlsProps) {
   return (
     <footer class="meeting-controls">
       <label class="volume-control">
-        <img src="/static/icons/icon1.png" />
+        <img src={assetUrl('/static/icons/icon1.png')} alt="Volume mínimo" />
         <input
           class="volume-slider"
           type="range"
@@ -27,17 +28,17 @@ export default function MeetingControls(props: MeetingControlsProps) {
           onInput={(event) => props.onVolumeChange(Number(event.currentTarget.value))}
           aria-label="Volume dos vídeos"
         />
-        <img src="/static/icons/icon2.png" />
+        <img src={assetUrl('/static/icons/icon2.png')} alt="Volume máximo" />
       </label>
       <button type="button" classList={{ muted: !props.microphoneEnabled }} onClick={() => props.onMicrophoneChange(!props.microphoneEnabled)}>
-        <img src={props.microphoneEnabled ? '/static/icons/microphone-on.png' : '/static/icons/microphone-off.png'} alt="" />
+        <img src={assetUrl(props.microphoneEnabled ? '/static/icons/microphone-on.png' : '/static/icons/microphone-off.png')} alt="" />
       </button>
       <button type="button" classList={{ muted: !props.cameraEnabled }} onClick={() => props.onCameraChange(!props.cameraEnabled)}>
-        <img src={props.cameraEnabled ? '/static/icons/camera-on.png' : '/static/icons/camera-off.png'} alt="" />
+        <img src={assetUrl(props.cameraEnabled ? '/static/icons/camera-on.png' : '/static/icons/camera-off.png')} alt="" />
       </button>
-      <button type="button" onClick={props.onReaction} ><img src="/static/icons/reaction.png" alt="" /></button>
-      <button type="button" onClick={props.onParticipants} ><img src="/static/icons/participants.png" alt="" /></button>
-      <button type="button" class="end-call" onClick={props.onLeave}><img src="/static/icons/leave.png" alt="" /></button>
+      <button type="button" onClick={props.onReaction} ><img src={assetUrl('/static/icons/reaction.png')} alt="" /></button>
+      <button type="button" onClick={props.onParticipants} ><img src={assetUrl('/static/icons/participants.png')} alt="" /></button>
+      <button type="button" class="end-call" onClick={props.onLeave}><img src={assetUrl('/static/icons/leave.png')} alt="" /></button>
     </footer>
   )
 }

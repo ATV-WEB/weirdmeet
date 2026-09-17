@@ -7,6 +7,7 @@ import ParticipantPopup from './ParticipantPopup.js'
 import PreJoinScreen from './PreJoinScreen.js'
 import { useMeetingRoom } from './useMeetingRoom.js'
 import './MeetingRoom.css'
+import { assetUrl } from '../../assets/assetUrl.js'
 
 type MeetingRoomProps = {
   title?: string
@@ -95,7 +96,7 @@ export default function MeetingRoom(props: MeetingRoomProps) {
               class="reaction-bubble"
               style={{ left: `${50 + ((reaction.id % 5) - 2) * 8}%` }}
             >
-              <img src="/static/icons/reaction.png" alt="" />
+              <img src={assetUrl('/static/icons/reaction.png')} alt="" />
             </div>
           )}
         </For>

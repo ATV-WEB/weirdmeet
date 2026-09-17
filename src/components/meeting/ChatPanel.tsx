@@ -3,6 +3,7 @@ import type { Accessor } from 'solid-js'
 import type { ChatMessage } from './types.js'
 import './ChatPanel.css'
 import { createEffect } from 'solid-js'
+import { assetUrl } from '../../assets/assetUrl.js'
 
 type ChatPanelProps = {
   onCollapsedChange?: (isCollapsed: boolean) => void
@@ -33,11 +34,11 @@ export default function ChatPanel(props: ChatPanelProps) {
   }
 
   return (
-    <aside class="chat-panel" classList={{ collapsed: isCollapsed() }}>
+    <aside class="chat-panel" classList={{ collapsed: isCollapsed() }} style={{ '--scribble-url': `url(${assetUrl('/static/icons/scribble.svg')})` }}>
       <header class="chat-header">
-        <h2><img src="/static/icons/chat.png" alt="" /></h2>
+        <h2><img src={assetUrl('/static/icons/chat.png')} alt="" /></h2>
         <button type="button" onClick={toggleCollapsed}>
-          <img src={isCollapsed() ? '/static/icons/chevron-right.png' : '/static/icons/chevron-left.jpg'} alt="" />
+          <img src={assetUrl(isCollapsed() ? '/static/icons/chevron-right.png' : '/static/icons/chevron-left.jpg')} alt="" />
         </button>
       </header>
       <Show when={!isCollapsed()}>

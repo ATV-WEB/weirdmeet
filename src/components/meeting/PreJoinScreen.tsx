@@ -1,4 +1,5 @@
 import { Show, createSignal, onCleanup, onMount } from 'solid-js'
+import { assetUrl } from '../../assets/assetUrl.js'
 import './PreJoinScreen.css'
 
 type PreJoinScreenProps = {
@@ -51,16 +52,16 @@ export default function PreJoinScreen(props: PreJoinScreenProps) {
         </div>
         <div class="pre-join-actions">
           <button type="button" classList={{ active: props.microphoneEnabled }} onClick={toggleMicrophone}>
-            <img src={props.microphoneEnabled ? '/static/icons/microphone-on.png' : '/static/icons/microphone-off.png'} alt="" />
+            <img src={assetUrl(props.microphoneEnabled ? '/static/icons/microphone-on.png' : '/static/icons/microphone-off.png')} alt="" />
           </button>
           <button type="button" classList={{ active: props.cameraEnabled }} onClick={toggleCamera}>
-            <img src={props.cameraEnabled ? '/static/icons/camera-on.png' : '/static/icons/camera-off.png'} alt="" />
+            <img src={assetUrl(props.cameraEnabled ? '/static/icons/camera-on.png' : '/static/icons/camera-off.png')} alt="" />
           </button>
         </div>
         <button class="join-button" type="button" onClick={() => {
           setIsOppening(true);
           props.onJoin()
-        }}><img src="/static/icons/join.png" alt="" /></button>
+        }}><img src={assetUrl('/static/icons/join.png')} alt="" /></button>
       </section>
     </main>
   )

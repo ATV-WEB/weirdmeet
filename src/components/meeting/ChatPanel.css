@@ -90,7 +90,7 @@
   font-size: 14px;
   padding: 8px 10px;
   position: relative;
-  
+
   &:has(input:placeholder-shown)::after {
     content: '';
     position: absolute;
@@ -98,7 +98,7 @@
     width: 100%;
     height: 100%;
     mask-repeat: no-repeat;
-    mask-image: url(/public/static/icons/scribble.svg);
+    mask-image: var(--scribble-url);
     mask-position: center left;
     opacity: 0.2;
     pointer-events: none;

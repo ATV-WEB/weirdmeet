@@ -1,4 +1,5 @@
 import { Show, createEffect, createSignal, onCleanup, onMount } from 'solid-js'
+import { assetUrl } from '../../assets/assetUrl.js'
 import './CameraFeed.css'
 
 type CameraFeedProps = {
@@ -30,7 +31,7 @@ export default function CameraFeed(props: CameraFeedProps) {
 
   return (
     <article class="camera-feed">
-      <Show when={!cameraError()} fallback={<div class="camera-fallback"><img class="cam-fallback" src="/static/icons/broken.jpg" /></div>}>
+      <Show when={!cameraError()} fallback={<div class="camera-fallback"><img class="cam-fallback" src={assetUrl('/static/icons/broken.jpg')} /></div>}>
         <video ref={cameraElement} autoplay muted playsinline />
       </Show>
       <div class="participant-label">
